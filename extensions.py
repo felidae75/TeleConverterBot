@@ -57,9 +57,9 @@ class GetRateText:
         value_for_rub = float(values_data[rate_command]) / float(values_data['RUB'])
         value_for_cny = float(values_data[rate_command]) / float(values_data['CNY'])
         text = f'Курс {values_dict_reverse[rate_command]}:\n'
-        text += '\nБиткоин {0:^10} {1:>20.7f}'.format("-", value_for_bitcoin) if rate_command != "BTC" else ""
-        text += '\nДоллар {0:^14} {1:>14.7f}'.format("-", value_for_usd) if rate_command != "USD" else ""
-        text += '\nЕвро {0:^24} {1:>0.7f}'.format("-", value_for_eur) if rate_command != "EUR" else ""
-        text += '\nРубль {0:^20} {1:>10.7f}'.format("-", value_for_rub) if rate_command != "RUB" else ""
-        text += '\nЮань {0:^20} {1:>10.7f}'.format("-", value_for_cny) if rate_command != "CNY" else ""
+        text += '\n1 Биткоин {0:^10} {1:>20.7f}'.format("-", value_for_bitcoin) if rate_command != "BTC" else ""
+        text += '\n1 Доллар {0:^14} {1:>14.7f}'.format("-", value_for_usd) if rate_command != "USD" else ""
+        text += '\n1 Евро {0:^24} {1:>0.7f}'.format("-", value_for_eur) if rate_command != "EUR" else ""
+        text += '\n1 Рубль {0:^20} {1:>10.7f}'.format("-", value_for_rub) if rate_command != "RUB" else ""
+        text += '\n1 Юань {0:^20} {1:>10.7f}'.format("-", value_for_cny) if rate_command != "CNY" else ""
         return text
