@@ -54,12 +54,18 @@ class GetRateText:
         # В том апи курс по отношению к евро, поэтому опять формулы перерасчёта
         value_for_usd = float(values_data[rate_command]) / float(values_data['USD'])
         value_for_bitcoin = float(values_data[rate_command]) / float(values_data['BTC'])
+        value_for_byn = float(values_data[rate_command]) / float(values_data['BYN'])
+        value_for_uah = float(values_data[rate_command]) / float(values_data['UAH'])
         value_for_rub = float(values_data[rate_command]) / float(values_data['RUB'])
+        value_for_kzt = float(values_data[rate_command]) / float(values_data['KZT'])
         value_for_cny = float(values_data[rate_command]) / float(values_data['CNY'])
         text = f'Курс {values_dict_reverse[rate_command]}:\n'
+        text += '\n1 Беларуский рубль {0:^10} {1:>20.7f}'.format("-", value_for_byn) if rate_command != "BYN" else ""
         text += '\n1 Биткоин {0:^10} {1:>20.7f}'.format("-", value_for_bitcoin) if rate_command != "BTC" else ""
+        text += '\n1 Гривна {0:^10} {1:>20.7f}'.format("-", value_for_uah) if rate_command != "UAH" else ""
         text += '\n1 Доллар {0:^14} {1:>14.7f}'.format("-", value_for_usd) if rate_command != "USD" else ""
         text += '\n1 Евро {0:^24} {1:>0.7f}'.format("-", value_for_eur) if rate_command != "EUR" else ""
         text += '\n1 Рубль {0:^20} {1:>10.7f}'.format("-", value_for_rub) if rate_command != "RUB" else ""
+        text += '\n1 Тенге {0:^20} {1:>10.7f}'.format("-", value_for_kzt) if rate_command != "KZT" else ""
         text += '\n1 Юань {0:^20} {1:>10.7f}'.format("-", value_for_cny) if rate_command != "CNY" else ""
         return text
